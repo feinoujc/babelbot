@@ -25,7 +25,7 @@ const api = apikey ? new OpenWeather(apikey, units) : null;
 export default (robot) => {
 
     if (!api) {
-        robot.logger.warn('HUBOT_OWM_APIKEY not set');
+        robot.logger.error('HUBOT_OWM_APIKEY not set');
     }
 
     robot.respond (/weather in (.*)/i, async (res) => {
